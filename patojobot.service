@@ -1,0 +1,17 @@
+[Unit]
+Description=Discord Bot with OpenRouter - PatojoBot
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/patojobot
+ExecStart=/opt/patojobot/discord-venv/bin/python3 /opt/patojobot/bot.py
+Environment="PYTHONUNBUFFERED=1"
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+User=root
+
+[Install]
+WantedBy=multi-user.target
